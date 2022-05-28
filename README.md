@@ -31,4 +31,4 @@ mvnw spring-boot:run
 ```
 
 Swagger available at:
-http://localhost:8080swagger-ui/index.html
+http://localhost:8080/swagger-ui/index.html
