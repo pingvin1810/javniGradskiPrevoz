@@ -19,34 +19,34 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-    @Autowired
-    private UserService userService;
+  @Autowired
+  private UserService userService;
 
-    @GetMapping("")
-    public List<User> getAllUsers() {
-        return userService.findAll();
-    }
+  @GetMapping("")
+  public List<User> getAllUsers() {
+    return userService.findAll();
+  }
 
-    @GetMapping("/{id}")
-    public Optional<User> getUserById(@PathVariable(value = "id") final long userID) {
-        return userService.find(userID);
-    }
+  @GetMapping("/{id}")
+  public Optional<User> getUserById(@PathVariable(value = "id") final long userID) {
+    return userService.find(userID);
+  }
 
-    @PostMapping("")
-    public void createUser(@RequestBody final User user) {
-        userService.create(user);
-    }
-
-
-    @PutMapping("/{id}")
-    public void updateUser(@PathVariable(value = "id") final long userID,
-                                 @RequestBody final User user) {
-        userService.update(user);
-    }
+  @PostMapping("")
+  public void createUser(@RequestBody final User user) {
+    userService.create(user);
+  }
 
 
-    @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable(value = "id") final long userID) {
-        userService.delete(userID);
-    }
+  @PutMapping("/{id}")
+  public void updateUser(@PathVariable(value = "id") final long userID,
+      @RequestBody final User user) {
+    userService.update(user);
+  }
+
+
+  @DeleteMapping("/{id}")
+  public void deleteUser(@PathVariable(value = "id") final long userID) {
+    userService.delete(userID);
+  }
 }
