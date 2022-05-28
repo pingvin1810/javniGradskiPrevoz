@@ -9,7 +9,7 @@ PostgreSQL database
 Run in psql command prompt:
 
 ```
-\i 'path/to/project/almasa-user-service/src/main/resources/db.sql'
+\i 'path/to/project/demo/src/main/resources/db.sql'
 ```
 
 ### How to build
@@ -31,4 +31,4 @@ mvnw spring-boot:run
 ```
 
 Swagger available at:
-http://localhost:8081/swagger-ui/index.html
+http://localhost:8080swagger-ui/index.html
