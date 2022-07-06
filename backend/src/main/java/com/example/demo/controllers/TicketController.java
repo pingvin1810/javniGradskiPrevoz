@@ -48,7 +48,7 @@ public class TicketController {
   @PutMapping("/{id}")
   public void updateTicket(@PathVariable(value = "id") final long ticketID,
       @RequestBody final Ticket ticket) {
-    ticketService.update(ticket);
+    ticketService.update(ticket, ticketID);
   }
 
   @PreAuthorize("hasRole('ROLE_ADMIN')")

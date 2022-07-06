@@ -45,7 +45,7 @@ public class ClockController {
   @PutMapping("/{id}")
   public void updateClock(@PathVariable(value = "id") final long clockID,
       @RequestBody final Clock clock) {
-    clockService.update(clock);
+    clockService.update(clock, clockID);
   }
 
   @PreAuthorize("hasRole('ROLE_ADMIN')")

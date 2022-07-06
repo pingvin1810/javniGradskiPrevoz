@@ -45,7 +45,7 @@ public class StationController {
   @PutMapping("/{id}")
   public void updateStation(@PathVariable(value = "id") final long stationID,
       @RequestBody final Station station) {
-    stationService.update(station);
+    stationService.update(station, stationID);
   }
 
   @PreAuthorize("hasRole('ROLE_ADMIN')")

@@ -26,12 +26,12 @@ public class TicketService {
     ticketRepository.save(ticket);
   }
 
-  public void update(final Ticket ticket) {
-    Ticket update = ticketRepository.findById(ticket.getTicketId()).orElseThrow();
+  public void update(final Ticket ticket, final long id) {
+    Ticket update = ticketRepository.findById(id).orElseThrow();
     update.setUserId(ticket.getUserId());
     update.setStartDate(ticket.getStartDate());
     update.setExpiryDate(ticket.getExpiryDate());
-    ticketRepository.save(ticket);
+    ticketRepository.save(update);
   }
 
   public void delete(final long id) {

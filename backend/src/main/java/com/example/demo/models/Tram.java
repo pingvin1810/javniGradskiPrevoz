@@ -15,13 +15,13 @@ public class Tram implements Serializable {
   @Column(name = "tramId")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long tramId;
-  private long number;
+  private long tramNumber;
   private String startStation;
   private String endStation;
 
   public Tram(long tramId, long number, String start, String end) {
     this.tramId = tramId;
-    this.number = number;
+    this.tramNumber = number;
     this.startStation = start;
     this.endStation = end;
   }
@@ -38,12 +38,12 @@ public class Tram implements Serializable {
     this.tramId = tramId;
   }
 
-  public long getNumber() {
-    return number;
+  public long getTramNumber() {
+    return tramNumber;
   }
 
-  public void setNumber(long number) {
-    this.number = number;
+  public void setTramNumber(long tramNumber) {
+    this.tramNumber = tramNumber;
   }
 
   public String getStartStation() {

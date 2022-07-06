@@ -15,13 +15,13 @@ public class Bus implements Serializable {
   @Column(name = "busId")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long busId;
-  private long number;
+  private long busNumber;
   private String startStation;
   private String endStation;
 
   public Bus(long busId, long number, String start, String end) {
     this.busId = busId;
-    this.number = number;
+    this.busNumber = number;
     this.startStation = start;
     this.endStation = end;
   }
@@ -38,12 +38,12 @@ public class Bus implements Serializable {
     this.busId = busId;
   }
 
-  public long getNumber() {
-    return number;
+  public long getBusNumber() {
+    return busNumber;
   }
 
-  public void setNumber(long number) {
-    this.number = number;
+  public void setBusNumber(long busNumber) {
+    this.busNumber = busNumber;
   }
 
   public String getStartStation() {

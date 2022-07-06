@@ -35,7 +35,7 @@ public class BusController {
   @PutMapping("/{id}")
   public void updateBus(@PathVariable(value = "id") final long busID,
       @RequestBody final Bus bus) {
-    busService.update(bus);
+    busService.update(bus, busID);
   }
 
   @PreAuthorize("hasRole('ROLE_ADMIN')")

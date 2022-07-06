@@ -39,11 +39,11 @@ public class Minibus implements Serializable {
     this.minibusId = minibusId;
   }
 
-  public long getNumber() {
+  public long getMinibusNumber() {
     return minibusNumber;
   }
 
-  public void setNumber(long number) {
+  public void setMinibusNumber(long number) {
     this.minibusNumber = number;
   }
 

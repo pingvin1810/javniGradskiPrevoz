@@ -26,12 +26,12 @@ public class MinibusService {
     minibusRepository.save(minibus);
   }
 
-  public void update(final Minibus minibus) {
-    Minibus update = minibusRepository.findById(minibus.getMinibusId()).orElseThrow();
-    update.setNumber(minibus.getNumber());
+  public void update(final Minibus minibus, final long id) {
+    Minibus update = minibusRepository.findById(id).orElseThrow();
+    update.setMinibusNumber(minibus.getMinibusNumber());
     update.setStartStation(minibus.getStartStation());
     update.setEndStation(minibus.getEndStation());
-    minibusRepository.save(minibus);
+    minibusRepository.save(update);
   }
 
   public void delete(final long id) {

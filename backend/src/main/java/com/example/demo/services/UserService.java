@@ -26,12 +26,12 @@ public class UserService {
     userRepository.save(user);
   }
 
-  public void update(final User user) {
-    User update = userRepository.findById(user.getUserId()).orElseThrow();
+  public void update(final User user, final long id) {
+    User update = userRepository.findById(id).orElseThrow();
     update.setUsername(user.getUsername());
     update.setPassword(user.getPassword());
     update.setRole(user.getRole());
-    userRepository.save(user);
+    userRepository.save(update);
   }
 
   public void delete(final long id) {

@@ -26,12 +26,12 @@ public class TramService {
     tramRepository.save(tram);
   }
 
-  public void update(final Tram tram) {
-    Tram update = tramRepository.findById(tram.getTramId()).orElseThrow();
-    update.setNumber(tram.getNumber());
+  public void update(final Tram tram, final long id) {
+    Tram update = tramRepository.findById(id).orElseThrow();
+    update.setTramNumber(tram.getTramNumber());
     update.setStartStation(tram.getStartStation());
     update.setEndStation(tram.getEndStation());
-    tramRepository.save(tram);
+    tramRepository.save(update);
   }
 
   public void delete(final long id) {

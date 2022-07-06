@@ -15,13 +15,13 @@ public class Trolley implements Serializable {
   @Column(name = "trolleyId")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long trolleyId;
-  private long number;
+  private long trolleyNumber;
   private String startStation;
   private String endStation;
 
   public Trolley(long tramId, long number, String start, String end) {
     this.trolleyId = trolleyId;
-    this.number = number;
+    this.trolleyNumber = number;
     this.startStation = start;
     this.endStation = end;
   }
@@ -38,12 +38,12 @@ public class Trolley implements Serializable {
     this.trolleyId = trolleyId;
   }
 
-  public long getNumber() {
-    return number;
+  public long getTrolleyNumber() {
+    return trolleyNumber;
   }
 
-  public void setNumber(long number) {
-    this.number = number;
+  public void setTrolleyNumber(long trolleyNumber) {
+    this.trolleyNumber = trolleyNumber;
   }
 
   public String getStartStation() {

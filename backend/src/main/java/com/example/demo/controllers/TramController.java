@@ -43,7 +43,7 @@ public class TramController {
   @PutMapping("/{id}")
   public void updateTram(@PathVariable(value = "id") final long tramID,
       @RequestBody final Tram tram) {
-    tramService.update(tram);
+    tramService.update(tram, tramID);
   }
 
   @PreAuthorize("hasRole('ROLE_ADMIN')")

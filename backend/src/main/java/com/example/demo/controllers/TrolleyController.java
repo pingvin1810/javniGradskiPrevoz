@@ -46,7 +46,7 @@ public class TrolleyController {
   @PutMapping("/{id}")
   public void updateTrolley(@PathVariable(value = "id") final long trolleyID,
       @RequestBody final Trolley trolley) {
-    trolleyService.update(trolley);
+    trolleyService.update(trolley, trolleyID);
   }
 
   @PreAuthorize("hasRole('ROLE_ADMIN')")

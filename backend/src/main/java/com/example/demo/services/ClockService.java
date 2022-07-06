@@ -28,14 +28,14 @@ public class ClockService {
     clockRepository.save(clock);
   }
 
-  public void update(final Clock clock) {
-    Clock update = clockRepository.findById(clock.getClockId()).orElseThrow();
+  public void update(final Clock clock, final long clockId) {
+    Clock update = clockRepository.findById(clockId).orElseThrow();
     update.setTramId(clock.getTramId());
     update.setTrolleyId(clock.getTrolleyId());
     update.setBusId(clock.getBusId());
     update.setMinibusId(clock.getMinibusId());
     update.setTime(clock.getTime());
-    clockRepository.save(clock);
+    clockRepository.save(update);
   }
 
   public void delete(final long id) {

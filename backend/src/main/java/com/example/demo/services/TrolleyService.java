@@ -26,12 +26,12 @@ public class TrolleyService {
     trolleyRepository.save(trolley);
   }
 
-  public void update(final Trolley trolley) {
-    Trolley update = trolleyRepository.findById(trolley.getTrolleyId()).orElseThrow();
-    update.setNumber(trolley.getNumber());
+  public void update(final Trolley trolley, final long id) {
+    Trolley update = trolleyRepository.findById(id).orElseThrow();
+    update.setTrolleyNumber(trolley.getTrolleyNumber());
     update.setStartStation(trolley.getStartStation());
     update.setEndStation(trolley.getEndStation());
-    trolleyRepository.save(trolley);
+    trolleyRepository.save(update);
   }
 
   public void delete(final long id) {

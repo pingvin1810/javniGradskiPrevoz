@@ -26,12 +26,12 @@ public class BusService {
     busRepository.save(bus);
   }
 
-  public void update(final Bus bus) {
-    Bus update = busRepository.findById(bus.getBusId()).orElseThrow();
-    update.setNumber(bus.getNumber());
+  public void update(final Bus bus, final long busId) {
+    Bus update = busRepository.findById(busId).orElseThrow();
+    update.setBusNumber(bus.getBusNumber());
     update.setStartStation(bus.getStartStation());
     update.setEndStation(bus.getEndStation());
-    busRepository.save(bus);
+    busRepository.save(update);
   }
 
   public void delete(final long id) {

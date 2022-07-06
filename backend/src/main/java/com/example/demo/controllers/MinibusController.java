@@ -43,7 +43,7 @@ public class MinibusController {
   @PutMapping("/{id}")
   public void updateMinibus(@PathVariable(value = "id") final long minibusID,
       @RequestBody final Minibus minibus) {
-    minibusService.update(minibus);
+    minibusService.update(minibus, minibusID);
   }
 
   @PreAuthorize("hasRole('ROLE_ADMIN')")

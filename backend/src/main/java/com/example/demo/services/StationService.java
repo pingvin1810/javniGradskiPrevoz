@@ -28,15 +28,15 @@ public class StationService {
     stationRepository.save(station);
   }
 
-  public void update(final Station station) {
-    Station update = stationRepository.findById(station.getStationId()).orElseThrow();
+  public void update(final Station station, final long id) {
+    Station update = stationRepository.findById(id).orElseThrow();
     update.setTramId(station.getTramId());
     update.setBusId(station.getBusId());
     update.setMinibusId(station.getMinibusId());
     update.setTrolleyId(station.getTrolleyId());
     update.setName(station.getName());
 
-    stationRepository.save(station);
+    stationRepository.save(update);
   }
 
   public void delete(final long id) {
