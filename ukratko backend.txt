@@ -1,0 +1,57 @@
+token je u jwtfilter i jwtutil - tamo ga generišu, validiraju.
+
+-KOMANDE POKRETANJE DBQ:
+psql -U postgres
+\i 'C:/Users/Merjem/Desktop/demo/src/main/resources/db.sql'
+
+
+CONTROLLERS:
+-oni određuju API endpointe koji primaju HTTP zahtjeve sa frontenda(postman)
+-gdje prima zahtjeve koji mogu biti get, put, post, delete koji izvršavaju CRUD funkcije nad bazom podataka. 
+
+@ anotacija
+
+-kontrolet poziva servis 
+
+SERVICES:
+-servis poziva poziva repozitorij koji ekstenda JPA repozitorij 
+
+REPOZITORIES:
+- ovaj sloj komunicira sa dbq i u pozadnini vrši sql upite tj psql pošto je izabrana baza postgres
+
+
+MODELS:
+-reprezentuju sql bazu u obliku java class 
+-u modelima imamo polja koja odgovaraju kolonama u tabeli
+- ima getere i setere koji postavljaju ili dohvaaćaju ova polja
+
+ENUM (ogranicenja):
+-postoji enum za role usera kako bi jedino mogao prihvatati i postavljati na vrijednost ADMIN ili USER 
+
+SECURITY:
+-koristi se jwt token koji u sebi sadrži podatke o logovanom useru i vrijedi 20 minuta 
+-nakon što se user loguje on dobiva token koji šalje u zahtjeve prema endpointima koji to zahtjevaju, tako da je time implementirana autorizacija uz to za neke endpointe potrebno je imati role ADMIN
+
+JWTFILTER:
+-implementira once peer request filter koji odobrava token ili, tj provjerava da li je istekao ili nije. 
+
+JWTUTIL:
+-implementira sve radnje vezane za token kao što je generisanje provjeravanje i slično. 
+
+SECURITY CONF:
+-on određuje za koje API je potrebna autorizacija a za koje ne 
+-anotacijom preAUTHORIZED koja se nalazi u kontrolerima nad određenim AP endpointima je određeno da li je potrebna i koja rola 
+
+USERDETAILSIMPL:
+-za kreiranje usera detalja koje zahtjeva jwt token 
+
+APLPLICATION PROPERTIES:
+-resources
+-tu su postavke za konekciju sa bazom podataka
+
+
+
+
+
+
+
